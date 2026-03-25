@@ -3,4 +3,5 @@ nos dirigimos a ustedes de parte del Grupo 2 para hacerles entrega oficial de la
 Adjuntos encontrarán los 6 archivos correspondientes a esta primera fase, divididos de la siguiente manera:
 Archivos de código (Python): airport.py, test_airport.py y interface.py.
 Archivos de datos y salida: Airports.txt, Airports.kml y SchengenAirports.txt (siendo los dos últimos generados a partir de nuestro código).
-Quedamos a la espera para recibir cualquier comentario o corrección.
+Quedamos a la espera para recibir cualquier comentario o corrección. Les adjunto el enlace directo a nuestro vídeo explicativo:
+https://drive.google.com/file/d/1FkX0wliVuuYEmYPtD_S895_IPnFeWGlF/view?usp=drive_link
