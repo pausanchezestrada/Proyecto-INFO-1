@@ -1,7 +1,6 @@
 Señores profesores,
-nos dirigimos a ustedes de parte del Grupo 2 para hacerles entrega oficial de la Versión 1 de nuestro proyecto.
-Adjuntos encontrarán los 6 archivos correspondientes a esta primera fase, divididos de la siguiente manera:
-Archivos de código (Python): airport.py, test_airport.py y interface.py.
-Archivos de datos y salida: Airports.txt, Airports.kml y SchengenAirports.txt (siendo los dos últimos generados a partir de nuestro código).
-Quedamos a la espera para recibir cualquier comentario o corrección. Les adjunto el enlace directo a nuestro vídeo explicativo:
-https://drive.google.com/file/d/1FkX0wliVuuYEmYPtD_S895_IPnFeWGlF/view?usp=drive_link
+nos dirigimos a ustedes de parte del Grupo 2 para hacerles entrega oficial de la Versión 2 de nuestro proyecto.
+Adjuntos encontrarán los dos archivos correspondientes a esta segunda fase (además de la actualización de la interfaz), divididos de la siguiente manera:
+Archivo de código (Python): aircraft.py y interface.py.
+Archivos de datos y salida: arrivals.txt y Aircrafts.kml (siendo el último generado a partir de nuestro código).
+Quedamos a la espera para recibir cualquier comentario o corrección. En breve les adjuntaremos el enlace directo a nuestro vídeo explicativo.
