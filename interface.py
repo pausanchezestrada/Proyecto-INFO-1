@@ -1,10 +1,18 @@
 from tkinter import *
 from airport import *
 from aircraft import *
+from LEBL import *
 
 aeropuerto_creado = []
 lista_principal = []
 lista_aircraft = []
+
+# 1. Creamos la zona de embarque pasando una lista vacía al final
+area = BoardingArea("Zona A", "Schengen", [])
+# 2. Creamos la terminal pasando la lista que contiene la zona_a y una lista de aerolíneas
+t1 = Terminal("T1", [area], [])
+# 3. Creamos el aeropuerto pasando su código y la lista con la terminal t1
+aeropuerto = BarcelonaAP("LEBL", [t1])
 
 def AClick():
   nuevo_aero = Airport("LEBL", 41.297445, 2.0832941)
@@ -102,6 +110,64 @@ def OClick():
    else:
        print("No hay vuelos de larga distancia")
 
+def PClick():
+   print("Creando puertas válidas de la ABA1 a la ABA10...")
+   resultado = SetGates(area, 1, 10, "ABA")
+   if resultado == -1:
+       print("Error al generar las puertas.")
+   else:
+       print(f"Puertas generadas con éxito en la {area.name}:")
+       # Recorremos 'area.list' y leemos 'Gate_name' tal como tú los programaste
+       for puerta in area.list:
+           print(
+               f" -> Nombre: {puerta.Gate_name} | Ocupada: {puerta.Gate_occupancy} | Avión: '{puerta.Gate_aircraft_id}'")
+
+def QClick():
+   LoadAirlines(t1, "T1")
+   print(t1.Icao)
+   print("Aerolineas cargados: ", len(t1.Icao))
+
+def RClick():
+   aeropuerto = LoadAirportStructure("Terminals.txt")
+   if aeropuerto != -1:
+       print("Aeropuerto cargado correctamente.")
+       print("Código:", aeropuerto.code)
+   else:
+       print("Error cargando el archivo.")
+
+def SClick():
+   lista_puertas = GateOccupancy(aeropuerto)
+   print("\nEstado de las puertas:\n")
+   for puerta in lista_puertas:
+       print(puerta)
+
+def TClick():
+   resultado_airline = IsAirlineInTerminal(t1, "IBE")
+
+
+   print("¿La aerolínea está en la terminal?:",
+         resultado_airline)
+
+def UClick():
+   terminal_encontrada = SearchTerminal(aeropuerto,
+                                        "IBE")
+   print("La aerolínea está en:",
+         terminal_encontrada)
+
+def VClick():
+   avion_prueba = Aircraft("IBE123","IBE","LEMD","12:30")
+   avion_prueba.airline_icao = "IBE"
+   avion_prueba.flight_type = "Schengen"
+   avion_prueba.aircraft_id = avion_prueba.id
+   t1.Icao.append("IBE")
+   resultado_assign = AssignGate(aeropuerto, avion_prueba)
+   if resultado_assign == 0:
+       print("Puerta asignada correctamente.")
+   elif resultado_assign == -1:
+       print("La aerolínea no pertenece a ninguna terminal.")
+   elif resultado_assign == -2:
+       print("No hay puertas libres.")
+
 window = Tk()
 window.geometry("800x800")
 window.rowconfigure(0, weight=1)
@@ -159,5 +225,18 @@ NButton = Button(window, text="MapFlights", bg='orange', fg="black", command=NCl
 NButton.grid(row=4, column=1, padx=5, pady=5, sticky=N + S + E + W)
 OButton = Button(window, text="LongDistanceFlights", bg='orange', fg="black", command=OClick)
 OButton.grid(row=4, column=2, padx=5, pady=5, sticky=N + S + E + W)
-
+PButton = Button(window, text="SetGates", bg='orange', fg="black", command=PClick)
+PButton.grid(row=4, column=3, padx=5, pady=5, sticky=N + S + E + W)
+QButton = Button(window, text="LoadAirlines", bg='orange', fg="black", command=QClick)
+QButton.grid(row=1, column=4, padx=5, pady=5, sticky=N + S + E + W)
+RButton = Button(window, text="LoadAirportStructure", bg='orange', fg="black", command=RClick)
+RButton.grid(row=2, column=4, padx=5, pady=5, sticky=N + S + E + W)
+SButton = Button(window, text="GateOccupancy", bg='orange', fg="black", command=SClick)
+SButton.grid(row=3, column=4, padx=5, pady=5, sticky=N + S + E + W)
+TButton = Button(window, text="IsAirlineInTerminal", bg='orange', fg="black", command=TClick)
+TButton.grid(row=4, column=4, padx=5, pady=5, sticky=N + S + E + W)
+UButton = Button(window, text="SearchTerminal", bg='orange', fg="black", command=UClick)
+UButton.grid(row=1, column=5, padx=5, pady=5, sticky=N + S + E + W)
+VButton = Button(window, text="AssignGate", bg='orange', fg="black", command=VClick)
+VButton.grid(row=2, column=5, padx=5, pady=5, sticky=N + S + E + W)
 window.mainloop()
