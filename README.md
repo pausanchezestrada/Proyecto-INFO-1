@@ -9,6 +9,7 @@ nos dirigimos a ustedes de parte del Grupo 2 para hacerles entrega oficial de la
 Para que puedan ver el mapa con los waypoints y trayectorias correctamente deben ser instaladas el siguiente listado de librerias:
 1. filedialogs (tkinter)
 2. simpledialog (tkinter)
+3. backends
 
 Adjuntos encontrarán todos los archivos que contiene nuestro proyecto.
 Esperamos que aprecien nuestro esfuerzo y dedicación por la asignatura. Quedamos a la espera de recibir cualquier comentario o corrección. En breve les adjuntaremos el enlace directo a nuestro vídeo explicativo.
