@@ -12,4 +12,4 @@ Para que puedan ver el mapa con los waypoints y trayectorias correctamente deben
 3. backends
 
 Adjuntos encontrarán todos los archivos que contiene nuestro proyecto.
-Esperamos que aprecien nuestro esfuerzo y dedicación por la asignatura. Quedamos a la espera de recibir cualquier comentario o corrección. En breve les adjuntaremos el enlace directo a nuestro vídeo explicativo.
+Esperamos que aprecien nuestro esfuerzo y dedicación por la asignatura. Quedamos a la espera de recibir cualquier comentario o corrección. Les adjuntamos el enlace directo a nuestro vídeo explicativo: https://drive.google.com/file/d/1IEw6KuvhFs0x3drE5ANNxMLgvXSFydzp/view?usp=drive_link
